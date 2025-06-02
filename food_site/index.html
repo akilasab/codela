@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="flex justify-between items-center px-10 py-5 bg-white shadow-md">
+        <h1 class="text-red-500 text-2xl font-bold">FOOD</h1>
+        <nav class="space-x-6">
+            <a href="#" class="text-gray-700 hover:text-red-500">Health & Safety</a>
+            <a href="#" class="text-gray-700 hover:text-red-500">Offers</a>
+            <a href="#" class="text-gray-700 hover:text-red-500">Services</a>
+            <a href="#" class="text-gray-700 hover:text-red-500">Menu</a>
+        </nav>
+        <button class="bg-red-500 text-white px-4 py-2 rounded-lg">Sign Up</button>
+    </header>
+
+    <section class="relative flex items-center justify-between px-10 py-20 bg-white">
+        <!-- Image and Overlay -->
+        <div class="relative w-1/2">
+            <div class="absolute inset-0 bg-yellow-300 w-2/3 h-full -z-10"></div>
+            <img src="https://media.istockphoto.com/id/1298255729/photo/cheerful-black-guy-eating-salad-enjoying-healthy-meal-yellow-background.jpg?s=612x612&w=0&k=20&c=Ok8JWj9XAA12YT-kjnV64orKjm5thK-_R6hdg8OQIQw=" alt="Food Image" class="rounded-lg shadow-lg">
+        </div>
+
+        <!-- Content -->
+        <div class="w-1/2 pl-20">
+            <h2 class="text-4xl font-bold text-gray-900">Convenient and Delicious Recipes</h2>
+            <p class="text-gray-600 mt-4">
+                A restaurant is a place where food and drinks are prepared and supplied to clients. Typically, meals are consumed on the premises.
+            </p>
+            <button onclick="location.href='nextpage.html'" class="mt-6 bg-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700">Explore More</button>
+            
+        </div>
+
+        <!-- Floating Card -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg px-6 py-4 rounded-lg transform rotate-3">
+            <p class="text-lg font-bold">100%</p>
+            <p class="text-gray-600">Healthy Food</p>
+        </div>
+    </section>
+  
+    <div class="relative flex items-center justify-between px-10 py-20 bg-white">
+        <div class="md:w-1/2 pr-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Categories</h2>
+            <h3 class="text-red-600 font-semibold mb-2">More Than Faster</h3>
+            <ul class="mb-4">
+                <li class="py-2 border-b text-gray-700 cursor-pointer hover:text-red-600">Adana Kebab, Lamb and Beef →</li>
+                <li class="py-2 border-b text-gray-700 cursor-pointer hover:text-red-600">White Beans Stew with Lamb Shank →</li>
+                <li class="py-2 border-b text-gray-700 cursor-pointer hover:text-red-600">Mandi with Lamb Shank Delina →</li>
+                <li class="py-2 border-b text-gray-700 cursor-pointer hover:text-red-600">Green Beans with Lamb Shank →</li>
+                <li class="py-2 border-b text-gray-700 cursor-pointer hover:text-red-600">Stuffed grape leaves with Lamb Shank →</li>
+            </ul>
+            <button onclick="location.href='nextpage.html'" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">Explore More</button>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+            <img src="https://magazine.circledna.com/wp-content/uploads/2023/08/content_images_assets.prenetics.com_blog.circledna.com_wp-content_uploads_2022_07_19001842_ala-lHZUkiWM74-unsplash-scaled-e1658161150169.jpg" alt="Delicious Food" class="rounded-lg shadow-lg">
+        </div>
+    </div>
+</body>
+</html>
