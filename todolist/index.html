@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ToDo List</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-blue-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-2xl font-bold">To do List</h1>
+      <button id="addTaskBtn" class="bg-blue-400 text-white px-4 py-2 rounded">Create Reminder</button>
+    </div>
+
+    <!-- Task Input -->
+    <div class="mb-4 space-y-2">
+      <input id="taskInput" type="text" placeholder="Task title" class="w-full p-2 border rounded"/>
+      <input id="tagInput" type="text" placeholder="Day/Time" class="w-full p-2 border rounded"/>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList" class="space-y-4"></ul>
+
+    <h2 class="mt-6 text-lg font-semibold">Completed</h2>
+    <ul id="completedList" class="space-y-4 mt-2"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+ 
