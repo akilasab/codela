@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Tags and Attributes Compilation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML5 Tags and Attributes Compilation</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="section1">
+            <h2>Text and Structural Elements</h2>
+            <p>This is a paragraph with a <b>bold</b> word and an <i>italic</i> word.</p>
+            <blockquote cite="https://example.com">This is a blockquote element.</blockquote>
+            <code>console.log('Hello, World!');</code>
+            <p><abbr title="Hypertext Markup Language">HTML</abbr> is the standard language for creating web pages.</p>
+            <p><bdi dir="rtl">مرحبا</bdi> (Hello in Arabic, with bidirectional isolation).</p>
+            <p><bdo dir="rtl">This text is right-to-left.</bdo></p>
+            <p><cite>HTML: The Complete Reference</cite> is a great book!</p>
+            <p><del>Deprecated content</del> can be shown like this.</p>
+            <p><ins datetime="2025-03-09">Inserted content</ins></p>
+            
+            <ul>
+                <li>Unordered list item 1</li>
+                <li>Unordered list item 2</li>
+            </ul>
+            <ol>
+                <li>Ordered list item 1</li>
+                <li>Ordered list item 2</li>
+            </ol>
+            
+            <table border="1">
+                <caption>Sample Table</caption>
+                <colgroup>
+                    <col span="1" style="background-color: #f2f2f2">
+                    <col>
+                </colgroup>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="section2">
+            <h2>Forms and Inputs</h2>
+            <form action="/submit" method="post">
+                <fieldset>
+                    <legend>User Details</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">
+                    <label for="progress">Progress:</label>
+                    <progress id="progress" value="70" max="100">70%</progress>
+                    <label for="meter">Rating:</label>
+                    <meter id="meter" value="6" min="0" max="10">6 out of 10</meter>
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+            
+            <figure>
+                <audio controls>
+                    <source src="audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <figcaption>Audio sample</figcaption>
+            </figure>
+            
+            <figure>
+                <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+                <figcaption>Video sample</figcaption>
+            </figure>
+
+            <details>
+                <summary>Click to expand</summary>
+                <p>Additional hidden information.</p>
+            </details>
+            
+            <dialog id="infoDialog">
+                <p>This is a dialog box. Click the button to close it.</p>
+                <button onclick="document.getElementById('infoDialog').close()">Close</button>
+            </dialog>
+            <button onclick="document.getElementById('infoDialog').showModal()">Open Dialog</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AKILA SABARI</p>
+        <address>
+            Contact: <a href="mailto:akilasabari82@gmail.com">akilasabari82@gmail.com</a>
+        </address>
+    </footer>
+</body>
+</html>
