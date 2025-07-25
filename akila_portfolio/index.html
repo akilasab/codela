@@ -1,157 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akila Sabari V | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akila Sabari | Portfolio</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      scroll-behavior: smooth;
-      position: relative;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      overflow-x: hidden;
     }
-    .plum-bg {
-      background-color: #8E4585;
+
+    .neon-text {
+      color: #39ff14;
+      text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #00ff95, 0 0 40px #00ff95;
     }
-    .plum-text {
-      color: #8E4585;
+
+    .glow-border {
+      border: 2px solid #39ff14;
+      box-shadow: 0 0 10px #39ff14, 0 0 20px #00ff95, 0 0 30px #00ff95;
     }
-    .gradient-text {
-      background: linear-gradient(to right, #8E4585, #DA70D6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+
     .floating {
-      animation: float 4s ease-in-out infinite;
+      animation: float 6s ease-in-out infinite;
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
     }
-    .bg-decor {
-      position: absolute;
-      z-index: -1;
-      opacity: 0.2;
-      pointer-events: none;
+
+    .sparkle {
+      background: radial-gradient(circle, #ffffff88 1px, transparent 1px), radial-gradient(circle, #ffffff44 1px, transparent 1px);
+      background-size: 100px 100px;
+      background-position: 0 0, 50px 50px;
+      animation: sparkleAnim 4s linear infinite;
     }
-    .circle {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #DA70D6 0%, #8E4585 100%);
+
+    @keyframes sparkleAnim {
+      0% { background-position: 0 0, 50px 50px; }
+      100% { background-position: 50px 50px, 100px 100px; }
+    }
+
+    .glitter-button {
+      background: linear-gradient(135deg, #ff00ff, #00ffff);
+      color: black;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+      transition: all 0.3s ease;
+    }
+
+    .glitter-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+    }
+
+    .light-mode {
+      background-color: #f3f3f3;
+      color: #121212;
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-white via-purple-100 to-purple-200 text-gray-800">
-  <!-- Background Graphics -->
-  <div class="bg-decor circle absolute top-10 left-10 animate-ping"></div>
-  <div class="bg-decor circle absolute bottom-10 right-10 animate-pulse"></div>
-  <svg class="absolute top-0 left-0 w-full h-48 -z-10" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#DA70D6" fill-opacity="0.2" d="M0,160L60,165.3C120,171,240,181,360,165.3C480,149,600,107,720,122.7C840,139,960,213,1080,229.3C1200,245,1320,203,1380,181.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-  </svg>
+
+<body class="text-white sparkle">
+
+  <!-- Sparkle Overlay -->
+  <div class="fixed inset-0 pointer-events-none sparkle z-0"></div>
 
   <!-- Navbar -->
-  <header class="plum-bg text-white sticky top-0 z-50 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Akila Sabari V</h1>
-      <nav class="space-x-6">
-        <a href="#home" class="hover:underline transition-all duration-200">Home</a>
-        <a href="#about" class="hover:underline transition-all duration-200">About</a>
-        <a href="#projects" class="hover:underline transition-all duration-200">Projects</a>
-        <a href="#skills" class="hover:underline transition-all duration-200">Skills</a>
-        <a href="#contact" class="hover:underline transition-all duration-200">Contact</a>
-      </nav>
+  <nav class="bg-black bg-opacity-80 fixed w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-lime-400 flex items-center gap-2">
+        <i class="ph ph-lightning text-xl"></i>Akila Sabari 
+      </a>
+      <div class="space-x-6 hidden md:block">
+        <a href="#" class="hover:text-lime-400 transition">Home</a>
+        <a href="#about" class="hover:text-lime-400 transition">About</a>
+        <a href="#skills" class="hover:text-lime-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-lime-400 transition">Projects</a>
+        <a href="#contact" class="hover:text-lime-400 transition">Contact</a>
+        <button id="modeToggle" class="ml-4 text-white bg-gray-700 px-3 py-1 rounded hover:bg-gray-600">Dark Mode</button>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- Home -->
-  <section id="home" class="h-screen flex flex-col items-center justify-center text-center px-4" data-aos="fade-in">
-    <div class="w-40 h-40 mb-6">
-      <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_tno6cg2w.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  <!-- Hero -->
+  <section class="h-screen flex flex-col justify-center items-center text-center pt-24 px-4 fade-in">
+    <div class="text-5xl font-bold mb-6 neon-text floating">
+      <span id="typing" class="neon-text"></span>
     </div>
-    <div class="relative z-10">
-      <h2 class="text-4xl font-bold gradient-text mb-2 animate-pulse"><span id="typing"></span></h2>
-      <p class="text-lg animate-fade-in">A BCA student passionate about Web Development, AI, and Cloud Computing.</p>
-    </div>
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-      <div class="absolute w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse top-10 left-10"></div>
-      <div class="absolute w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-ping bottom-10 right-10"></div>
-    </div>
+    <p class="text-gray-300 max-w-xl glow-border p-4 rounded-lg bg-black bg-opacity-40 mt-4">
+      Designing with code, thinking in algorithms, scaling with the cloud
+    </p>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-20 px-6 bg-purple-50" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto text-center">
-      <h3 class="text-3xl font-bold plum-text mb-4">About Me</h3>
-      <p class="text-md leading-relaxed">I'm a detail-oriented Computer Application student at VIT. I thrive on building real-world solutions through technology, especially in Web Development, AI, and Cloud Computing. My passion for learning drives me to continuously explore and create impactful tech projects.</p>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="py-20 px-6" data-aos="zoom-in-up">
-    <div class="max-w-4xl mx-auto">
-      <h3 class="text-3xl font-bold text-center gradient-text mb-10">Skills</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
-        <div class="hover:scale-110 transform transition bg-white rounded-xl shadow-md p-4">HTML, CSS</div>
-        <div class="hover:scale-110 transform transition bg-white rounded-xl shadow-md p-4">Tailwind CSS</div>
-        <div class="hover:scale-110 transform transition bg-white rounded-xl shadow-md p-4">JavaScript</div>
-        <div class="hover:scale-110 transform transition bg-white rounded-xl shadow-md p-4">SQL, Java</div>
-        <div class="hover:scale-110 transform transition bg-white rounded-xl shadow-md p-4">Python, C++</div>
-        <div class="hover:scale-110 transform transition bg-white rounded-xl shadow-md p-4">Android XML</div>
-        <div class="hover:scale-110 transform transition bg-white rounded-xl shadow-md p-4">MongoDB Basics</div>
+  <!-- About -->
+  <section id="about" class="py-20 px-6 bg-gradient-to-r from-indigo-500 to-pink-500" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto text-white text-center">
+      <h2 class="text-4xl font-bold mb-6">About Me</h2>
+      <p class="mb-10 max-w-3xl mx-auto text-lg">
+       Hi! I’m a BCA graduate from VIT who loves turning complex ideas into simple, elegant tech.
+        From sleek websites to smart AI tools and cloud-powered apps — I build to learn and I build to impact.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6 text-left">
+        <div class="p-6 rounded-xl bg-[#1e1e2f] text-white glow-border floating">
+          <h3 class="text-2xl font-semibold mb-2 text-lime-400">Frontend Developer</h3>
+          <p>Proficient in crafting responsive and interactive UIs using HTML, CSS, JavaScript, and Tailwind CSS.</p>
+        </div>
+        <div class="p-6 rounded-xl bg-[#1e1e2f] text-white glow-border floating">
+          <h3 class="text-2xl font-semibold mb-2 text-lime-400">Programming Languages</h3>
+          <p>Specializing in Python, Java, C++ for building robust applications and solving complex problems.</p>
+        </div>
+        <div class="p-6 rounded-xl bg-[#1e1e2f] text-white glow-border floating">
+          <h3 class="text-2xl font-semibold mb-2 text-lime-400">Database Management</h3>
+          <p>Experienced in MongoDB and SQL databases to manage data efficiently and securely.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 px-6 bg-purple-100" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-3xl font-bold text-center gradient-text mb-10">Projects</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-          <h4 class="font-bold text-xl mb-2">EV Battery Optimization</h4>
+  <!-- Skills -->
+  <section id="skills" class="py-20 px-6 bg-gradient-to-r from-yellow-400 to-orange-500" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8 text-white">Skills</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div class="bg-white text-black p-6 rounded-xl glow-border">
+          <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div class="bg-white text-black p-6 rounded-xl glow-border">
+          <h3 class="text-xl font-semibold mb-2">Backend</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>MongoDB</li><li>SQL</li>
+          </ul>
+        </div>
+        <div class="bg-white text-black p-6 rounded-xl glow-border">
+          <h3 class="text-xl font-semibold mb-2">Tools & Technologies</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Git & GitHub</li><li>VS Code</li><li>Cursor</li><li>Eclipse</li><li>PyCharm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 px-6 bg-gradient-to-r from-green-400 to-blue-500" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8 text-white">Projects</h2>
+      <div class="space-y-6 text-left">
+        <div class="bg-white p-6 rounded-xl text-black glow-border">
+          <h3 class="text-2xl font-semibold mb-2">EV Battery Optimization</h3>
           <p>Machine learning project to improve electric vehicle battery performance using real-time data analytics.</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-          <h4 class="font-bold text-xl mb-2">Baby Bliss Assistant App</h4>
+        <div class="bg-white p-6 rounded-xl text-black glow-border">
+          <h3 class="text-2xl font-semibold mb-2">Baby Bliss Assistant</h3>
           <p>An Android app to help manage doctor appointments, medications, and baby photo gallery using MongoDB and cloud backend.</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-          <h4 class="font-bold text-xl mb-2">Restaurant Reservation System</h4>
+        <div class="bg-white p-6 rounded-xl text-black glow-border">
+          <h3 class="text-2xl font-semibold mb-2">Restaurant Reservation</h3>
           <p>Web application for managing restaurant bookings, built with HTML, CSS, JavaScript and deployed via GitHub + Netlify.</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-          <h4 class="font-bold text-xl mb-2">Football Score Prediction</h4>
-          <p>Used Python and linear regression to predict football match outcomes based on historical data.</p>
+        <div class="bg-white p-6 rounded-xl text-black glow-border">
+          <h3 class="text-2xl font-semibold mb-2">Football Score Prediction</h3>
+          <p>Python + ML linear regression to predict football match outcomes based on historical data.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto text-center">
-      <h3 class="text-3xl font-bold gradient-text mb-4">Contact</h3>
-      <p class="mb-2">📍 Tamil Nadu, India</p>
-      <p class="mb-4">✉️ akilasabari82@gmail.com</p>
-      <div class="flex justify-center space-x-6 mt-4">
-        <a href="https://www.linkedin.com/in/akilasabari" target="_blank" class="text-blue-700 hover:underline">LinkedIn</a>
-        <a href="https://github.com/akilasab" target="_blank" class="text-gray-800 hover:underline">GitHub</a>
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6 bg-gradient-to-r from-purple-500 to-red-500" data-aos="fade-up">
+    <div class="max-w-xl mx-auto text-center text-white">
+      <h2 class="text-4xl font-bold mb-4">Contact</h2>
+      <p class="mb-6">Feel free to connect with me for collaboration or opportunities.</p>
+      <div class="space-y-4 text-lg">
+        <p><i class="ph ph-envelope-simple mr-2 text-xl"></i><a href="mailto:akilasabari82@gmail.com" class="underline">akilasabari82@gmail.com</a></p>
+        <p><i class="ph ph-linkedin-logo mr-2 text-xl"></i><a href="https://www.linkedin.com/in/akilasabari/" class="underline" target="_blank">linkedin.com/in/akilasabari</a></p>
+        <p><i class="ph ph-github-logo mr-2 text-xl"></i><a href="https://github.com/akilasab" class="underline" target="_blank">github.com/akilasabari</a></p>
       </div>
-      <p class="mt-6 text-sm text-gray-500">© 2023 Akila Sabari V. All rights reserved.</p>
+      <p class="mt-6">
+        <a href="akilasabari-Resume.pdf" download class="glitter-button px-6 py-2 text-lg font-bold">
+          ✨ Download Resume
+        </a>
+      </p>
     </div>
   </section>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Typing Effect -->
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
     const roles = ["Hi, I'm Akila Sabari V", "A Web Developer", "AI Enthusiast", "Cloud Explorer"];
     let i = 0, j = 0, current = "", isDeleting = false;
     const typingSpan = document.getElementById("typing");
@@ -174,5 +229,29 @@
     }
     typeEffect();
   </script>
+
+  <!-- Theme Toggle -->
+  <script>
+    const toggle = document.getElementById("modeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+    });
+  </script>
+
+  <!-- AOS Init -->
+  <script>
+    AOS.init();
+  </script>
+<footer class="text-center p-4 bg-gray-100 text-gray-600">
+  &copy; 2025 Akila Sabari. All rights reserved.
+</footer>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+
 </body>
 </html>
